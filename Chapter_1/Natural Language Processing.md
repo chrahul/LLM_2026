@@ -1,4 +1,3 @@
-Below is the **same content rewritten in your teaching style** — simple, structured, slightly conversational, and suitable for explaining to students in a lecture or course.
 
 ---
 

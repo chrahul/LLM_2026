@@ -772,7 +772,7 @@ Students learn:
 
 ---
 
-# How I Would Explain This to Students
+# One minute Explanation
 
 Let me simplify everything.
 

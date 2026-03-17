@@ -1,4 +1,4 @@
-# SECTION 6 — Comparing Real LLM Tokenizers
+# Comparing Real LLM Tokenizers
 
 *(BERT vs GPT vs GPT-4 vs Code Models)*
 

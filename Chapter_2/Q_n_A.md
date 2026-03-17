@@ -354,27 +354,299 @@ This is why embeddings enable:
 
 # One Sentence Summary
 
-If I explain this to students:
-
 > Tokenization converts text into token IDs, and the embedding layer converts those IDs into vectors that represent the meaning of the tokens.
 
 ---
+---
 
-# Final Feedback on Your Understanding
+**Q2**  
+"Okay, so tokenization happens before the transformer, right? It's done by a separate tokenizer that just assigns numbers to words or word parts. Then, embeddings give those numbers meaning—like, would embeddings for 'king' and 'queen' be closer together in that meaning space than 'king' and 'Kubernetes'? That makes sense for similar words, right? Am I getting this?"  
 
-Your understanding score:
-
-| Concept               | Status              |
-| --------------------- | ------------------- |
-| Language AI           |  correct           |
-| Bag of Words          |  correct           |
-| Embeddings idea       |  correct           |
-| RNN evolution         |  correct           |
-| Attention             |  correct           |
-| Tokenization location |  small correction |
-
-You are **very close to mastering this**.
+Your understanding now is **almost perfectly correct**. Let me refine it slightly so that the concept becomes **100% precise**, because this distinction becomes very important when you later study transformers.
 
 ---
+
+# 1. Tokenization — Your Understanding (Correct)
+
+Your statement:
+
+> tokenization is done before the transformer by the tokenizer
+
+ **Correct**
+
+Pipeline again:
+
+```
+User Text
+   ↓
+Tokenizer
+   ↓
+Token IDs
+   ↓
+Embedding Layer
+   ↓
+Transformer
+```
+
+The tokenizer:
+
+* breaks text into tokens
+* maps tokens to **IDs**
+
+Example:
+
+```
+King → 3215
+Queen → 4981
+Kubernetes → 90234
+```
+
+These numbers **do not carry meaning**.
+They are just **indexes in a vocabulary table**.
+
+Think of them like:
+
+```
+Dictionary word number
+```
+
+---
+
+# 2. Embeddings — Your Understanding (Also Correct)
+
+Your statement:
+
+> embedding assigns meaning
+
+ **Yes — that is exactly the purpose of embeddings.**
+
+Embedding converts token IDs into **vectors that represent semantic meaning**.
+
+Example:
+
+```
+king   → [0.21, -0.44, 0.13, ...]
+queen  → [0.25, -0.40, 0.15, ...]
+apple  → [-0.77, 0.81, -0.33, ...]
+```
+
+These vectors might have **hundreds or thousands of dimensions**.
+
+Example:
+
+```
+768 dimensions
+1024 dimensions
+4096 dimensions
+```
+
+---
+
+# 3. Distance Between Embeddings (Your Example)
+
+You said:
+
+> king and queen embeddings are closer than king and Kubernetes
+
+ **Correct idea**
+
+Embeddings live in a **vector space**.
+
+Words with similar meaning appear **close together**.
+
+Example conceptual space:
+
+```
+        queen
+          *
+        *
+king  *
+
+             apple
+                *
+           banana
+
+                    Kubernetes
+                         *
+```
+
+Distance between vectors represents **semantic similarity**.
+
+---
+
+# 4. One Important Correction
+
+Your explanation is **correct for classical embeddings** like:
+
+* Word2Vec
+* GloVe
+
+But modern **LLM embeddings are contextual**.
+
+That means:
+
+The same word can have **different embeddings depending on context**.
+
+Example:
+
+```
+bank
+```
+
+Sentence 1:
+
+```
+I deposited money in the bank
+```
+
+Sentence 2:
+
+```
+The boat reached the river bank
+```
+
+In modern LLMs:
+
+```
+bank(finance) ≠ bank(river)
+```
+
+Different embeddings.
+
+This is called:
+
+```
+Contextual embeddings
+```
+
+---
+
+# 5. Simple Analogy (Good for Teaching)
+
+Token ID = **dictionary index**
+
+Embedding = **meaning vector**
+
+Example:
+
+```
+Token ID: 4211 → "king"
+```
+
+Embedding:
+
+```
+king → [leader, royalty, male, power, monarchy...]
+```
+
+These properties are not explicit but encoded mathematically.
+
+---
+
+# 6. Full Flow With Your Example
+
+Let’s take your example word:
+
+```
+King
+```
+
+Step 1 — Tokenization
+
+```
+King → token ID 4211
+```
+
+Step 2 — Embedding lookup
+
+```
+4211 → [0.23, -0.12, 0.77, ...]
+```
+
+Step 3 — Transformer processing
+
+The transformer now analyzes relationships between these vectors.
+
+---
+
+# 7. Your Understanding Summary
+
+Your current understanding can be written like this:
+
+> Tokenizer converts text into token IDs. These token IDs are then converted into embedding vectors, which represent the semantic meaning of the tokens. Words with similar meanings tend to have embeddings that are closer together in vector space.
+
+ That statement is **accurate**.
+
+---
+
+# 8. One Insight That Will Help You Later
+
+Embeddings enable something extremely powerful.
+
+You can do math with meaning.
+
+Example discovered in **Word2Vec research**:
+
+```
+king - man + woman ≈ queen
+```
+
+This works because embeddings represent **semantic relationships**.
+
+---
+
+# 9. One Small Mental Model
+
+Think of embeddings as **coordinates on a map of meaning**.
+
+Example:
+
+```
+(royalty axis)
+      ↑
+queen
+king
+      ↓
+
+(common objects)
+apple
+banana
+```
+
+Words are placed **in positions based on their meaning**.
+
+---
+
+# Final Verdict on Your Understanding
+
+Your understanding now:
+
+| Concept                      | Status            |
+| ---------------------------- | ----------------- |
+| Tokenizer before transformer |  correct         |
+| Token IDs                    |  correct         |
+| Embedding gives meaning      |  correct         |
+| Semantic closeness           |  correct         |
+| Contextual embeddings        |  small addition |
+
+Overall:
+
+**Your understanding is now about 90–95% correct.**
+
+You are very close to fully understanding the **LLM input pipeline**.
+
+---
+
+Please visit, the **Chapter 2 where is explains**:
+**Why tokens are sometimes parts of words like**
+
+It explains something most people misunderstand:
+```
+apolog + izing
+Kuber + net + es
+```
+
+Once you understand that, **token limits, prompt engineering, and model cost suddenly make perfect sense.**
+
 
 

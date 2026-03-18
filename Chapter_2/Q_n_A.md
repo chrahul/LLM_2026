@@ -650,3 +650,213 @@ Once you understand that, **token limits, prompt engineering, and model cost sud
 
 
 
+#Q3:What is Vector ? Are they like co-rdinates in few dimensions ?
+
+You said:
+
+* vector = coordinates like 2,3
+* similar words → nearby coordinates
+
+**YES, this is correct directionally**
+
+BUT small correction:
+
+```text
+Vector is NOT just 2D like 2,3
+It is high dimensional
+```
+
+Example:
+
+```text
+king → [0.12, -0.44, 0.98, 0.77, ... hundreds of values]
+```
+
+So instead of:
+
+```text
+(2, 3)
+```
+
+It is:
+
+```text
+(2, 3, 1.5, -0.7, 0.2, ...)
+```
+
+100 to 1000 dimensions
+
+---
+
+# What is a Vector (Simple Explanation)
+
+---
+
+## What is a Vector?
+
+> A vector is simply a list of numbers that represents the meaning of something.
+
+---
+
+## Example
+
+Word:
+
+```text
+king
+```
+
+Vector:
+
+```text
+[0.9, 0.1, 0.8, 0.3, ...]
+```
+
+---
+
+## What do these numbers mean?
+
+Each number represents some hidden property.
+
+Example intuition:
+
+```text
+dimension 1 → royalty  
+dimension 2 → gender  
+dimension 3 → power  
+dimension 4 → human vs object  
+```
+
+---
+
+## So:
+
+```text
+king → high royalty, male  
+queen → high royalty, female
+```
+
+That’s why vectors are close
+
+---
+
+# Better Analogy (Very Powerful)
+
+---
+
+## Think of a Person Profile
+
+Rahul:
+
+```text
+Height = 5.9  
+Weight = 75  
+Skill = DevOps  
+Experience = 10  
+```
+
+This is also a vector
+
+---
+
+## Another person:
+
+```text
+Height = 5.8  
+Weight = 74  
+Skill = DevOps  
+Experience = 9  
+```
+
+Very similar
+
+---
+
+## So:
+
+```text
+Similar profile → similar vector
+```
+
+---
+
+# Core Idea
+
+```text
+Vector = structured representation of properties
+```
+
+---
+
+# How Similarity Works
+
+Now your question:
+
+> 2.1 and 3.1 are close to 2,3
+
+Yes — but we don’t compare like that directly.
+
+We use:
+
+```text
+distance between vectors
+```
+
+---
+
+## Common method
+
+```text
+Cosine similarity
+```
+
+---
+
+## Simple intuition
+
+```text
+Closer vectors → similar meaning  
+Far vectors → different meaning
+```
+
+---
+
+# Important Clarification
+
+* Training uses math (linear algebra, optimization)
+* But usage is simple:
+
+```text
+Compare vectors → find similarity
+```
+
+---
+
+# Best Explaination
+3-step explanation:
+
+---
+
+## Step 1 — Problem
+
+> Computer cannot understand words
+
+---
+
+## Step 2 — Solution
+
+> Convert words into numbers
+
+---
+
+## Step 3 — Final Insight
+
+> These numbers are not random
+> They capture meaning
+
+---
+
+> A vector is just a way to convert a word into numbers so that the computer can understand its meaning and compare it with other words.
+
+---
+

@@ -337,7 +337,6 @@ outputs = model.generate(**inputs, max_new_tokens=10)
 
 # Step 3: Decode
 print("Final Output:", tokenizer.decode(outputs[0]))
-```
 
 /usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning: 
 The secret `HF_TOKEN` does not exist in your Colab secrets.
@@ -373,6 +372,10 @@ generation_config.json: 100%
 Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
 Token IDs: tensor([[   42, 18478,  3262,   274,  5419,   287]])
 Final Output: Kubernetes helps in the development of the web.
+
+```
+
+
 
 
 ---

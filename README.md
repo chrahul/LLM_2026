@@ -1,5 +1,11 @@
 # LLM_2026
 
+> **This is a personal scratchpad** for notes from the *Hands-On Large Language Models* book.
+> My primary AI/LLMOps portfolio and active project work lives at:
+> **[IITM-Agentic-AI-Journey](https://github.com/chrahul/IITM-Agentic-AI-Journey)**
+
+---
+
 ## *Hands-On Large Language Models* 
 
 
